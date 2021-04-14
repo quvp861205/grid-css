@@ -1,0 +1,166 @@
+body {
+	margin: 5px;
+	padding: 0;
+}
+
+div, nav, article, li, aside {
+	border-radius: 10px;
+}
+
+/******* GRID DE LA PAGINA *******/
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-gap: 20px;
+  width: 100%;
+  height: 100vh;
+}
+
+
+/* Celulares todo en una sola columna */
+.wrapper > * {
+  grid-column: col-start / span 12;
+}
+
+.main-nav {
+	background-color: #76D7C4;
+  }
+
+.content {
+	background-color: #EAFAF1;
+}
+.side {
+	background-color: #28B463;
+}
+.ad {
+	background-color: #82E0AA;
+}
+.main-footer {
+	background-color: #ABEBC6;
+}
+
+.main-head {
+	background-color: #D4EFDF;
+}
+
+a {
+  color: #145A32;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+@media (min-width: 500px) {
+
+  .side {
+    grid-column: col-start / span 3;
+    grid-row: 3;
+  }
+  .ad {
+    grid-column: col-start / span 3;
+    grid-row: 4;
+  }
+  .content, .main-footer {
+    grid-column: col-start 4 / span 9;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 700px) {	
+	
+  .main-nav {
+    grid-column: col-start / span 2;
+    grid-row: 2 / 12;
+
+  }
+  .content {
+    grid-column: col-start 3 / span 8;
+    grid-row: 2 / 12;
+
+  }
+  .side {
+    grid-column: col-start 11 / span 2;
+    grid-row: 2 / span 5;
+
+  }
+  .ad {
+    grid-column: col-start 11 / span 2;
+    grid-row: 7 / span 5;
+
+  }
+  .main-footer {
+    grid-column: col-start / span 12;
+	grid-row: 12;
+
+  }
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+/***** GRID DE LAS CARDS ******/
+
+.listing
+{
+	list-style: none;
+	margin: 2em;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
+	grid-auto-flow: dense;
+}
+
+@media (min-width: 700px) {
+	.listing .wide {
+		grid-column-end: span 2;
+	}
+}
+
+.title-card {
+	background-color: #76D7C4;
+	margin: 0;
+	padding: 0;
+	border-radius: 5px 5px 0 0;
+}
+
+
+
+.listing>li:nth-child(even) {
+	background-color: #A3E4D7;
+}
+.listing>li:nth-child(odd) {
+	background-color: #D0ECE7;
+}
+
+.listing li {
+	border: 1px solid #2ECC71;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+}
+
+.listing .cta {
+	margin-top: auto;
+	border-top: 1px solid #2ECC71 ;
+	padding: 10px;
+	text-align: center;
+}
+
+.listing .body {
+	padding: 10px;
+}
+
+
+
