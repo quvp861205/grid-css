@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Roboto:ital,wght@0,100;1,300&display=swap" rel="stylesheet"></head>
+<style>
+    body {
+        font-family: 'Itim', cursive;
+        font-family: 'Roboto', sans-serif;
+        margin:0;
+        padding:0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        background: skyblue;
+        height: 100vh;
+        flex-grow: column;
+        font-size: 18px;
+    }
+
+    .header {
+        font-family: 'Itim', cursive;
+        font-family: 'Roboto', sans-serif;
+        background: gold;
+        height: 3rem;
+        outline: 1px dashed black;
+    }
+    .container {
+        font-family: 'Itim', cursive;
+        font-family: 'Roboto', sans-serif;
+        background: lime;
+        display: flex;
+        height: 100%;
+
+    }
+    .content {
+        background: cyan;
+        height: 100%;
+        flex: 1 1 auto;
+        outline: 1px dashed black;
+    }
+    .aside {
+        background: magenta;
+        flex: 0 0 25%;
+        outline: 1px dashed black;
+    }
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        background: lime;
+        margin: 0;
+        height: 3rem;
+        
+    }
+    .menu-item {
+        list-style: none; 
+        line-height: inherit;
+        transition: flex .5s;
+        outline: 1px dashed black;
+        background: pink;
+        flex: 1;
+        height: 100%;     
+        text-align: center;   
+        vertical-align: center;
+    }
+    .menu-item:hover {
+        flex: 8;
+    }
+    ul,menu {
+        margin: 0;
+        padding: 0;
+    }
+    ul.menu li:nth-child(1) {
+  background: #EAEAE8;
+  color: black;
+}
+ul.menu li:nth-child(2) {
+  background: #ADADAD;
+  color: black;
+}
+ul.menu li:nth-child(3) {
+  background: #928E99;
+  color: black;
+}
+    .footer {
+        font-family: 'Itim', cursive;
+        font-family: 'Roboto', sans-serif;
+        background: salmon;
+        height: 4rem;
+        margin-top: auto;
+        outline: 1px dashed black;
+    }
+</style>
+<body>
+    <header class="header">
+        <ul class="menu">
+            <li class="menu-item">
+                <p>Titulo 1</p>  
+            </li>
+            <li class="menu-item">
+                <p>Titulo 2</p>  
+            </li>
+            <li class="menu-item">
+                <p>Titulo 3</p>  
+            </li>
+            <li class="menu-item">
+                <p>Titulo 4</p>  
+            </li>
+        </ul>
+    </header>
+    <section class="container">
+        <section class="content">
+            Contenido
+        </section>
+        <aside class="aside">
+            Anuncios
+        </aside>
+    </section>
+    <footer class="footer">
+        Footer
+    </footer>
+</body>
+</html>

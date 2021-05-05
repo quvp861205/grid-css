@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platzi Video</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@364&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        margin: 0px;
+        background: #AB88FF;
+        font-family: 'Mulish', sans-serif;
+    }
+
+    /* HEADER */
+    .header {
+        background: #AB88FF;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header__img {
+        width: 200px;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    .header__menu {
+        margin-right: 30px;
+    }
+    .header__menu--profile {
+        margin-right: 8px;
+        display: flex;
+        align-items: center;
+    }
+    .header__menu ul {
+        display: none;
+        list-style: none;
+        padding: 0;
+        position: absolute;
+        width: 100px;
+        text-align: right;
+        margin: 0px 0px 0px -14px;
+    }
+    .header__menu:hover ul, ul:hover {
+        display: block;
+    }
+    .header__menu li {
+        margin: 10px 0px;
+    }
+    .header__menu li a {
+        color: white;
+        text-decoration: none;
+    }
+    .header__menu p {
+        margin: 0;
+        color: white;
+    }
+
+    /* BUSCADOR */
+    .main {
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 0 0 40px 40px;
+        font-family: 'Mulish', sans-serif;
+    }
+    .main__title {
+        color: white;
+        font-size: 25px;
+        font-family: 'Mulish', sans-serif;
+    }
+    .main__input {
+        border: 2px solid white;
+        border-radius: 25px;
+        color: white;
+        font-family: 'Mulish', sans-serif;
+        font-size: 16px;
+        height: 30px;
+        padding: 0 20px;
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        outline: none;
+    }
+    ::placeholder {
+        color: white;
+    }
+
+    /* TITULO DE CATEGORIAS */
+    .categorias__titulo {
+        color: white;
+        font-size: 16px;
+        position: absolute;
+        padding-left: 30px;
+        width: 100%;
+    }
+
+    /* CARRUSEL */
+    .carrusel {
+        width: 100%;
+        overflow: hidden;
+        padding: 30px;
+        position: relative;
+
+    }
+    .carrusel__contenedor {
+        white-space: nowrap;
+        margin: 70px 0px;
+        padding-bottom: 10px;
+
+    }
+    .carrusel__item {
+        width: 200px;
+        height: 250px;
+        border-radius: 20px;
+        background-color: palevioletred;
+        overflow: hidden;
+        margin-right: 10px;
+        display: inline-block;
+        cursor: pointer;
+        transition: 450ms all;
+        transform-origin: center left;
+        position: relative;
+        color: white;
+        font-weight: bold;
+    }
+    .carrusel__item:hover ~ .carrusel__item {
+        transform: translate3d(100px, 0, 0);
+    }
+
+    .carrusel__contenedor:hover .carrusel__item  {
+        opacity: 0.3;
+    }
+
+    .carrusel__contenedor:hover .carrusel__item:hover {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    .carrusel__item--img {
+        object-fit: cover;
+        width: 200px;
+        height: 250px;
+    }
+
+    .carrusel__item--detalle {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, gba(0, 0, 0, 0) 100%);
+        font-size: 10px;
+        opacity: 0;
+        transition: 450ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 150px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .carrusel__item--detalle:hover {        
+        opacity: 1;        
+    }
+
+    .carrusel__item--detalle > div > img {        
+        width: 20px;        
+    }
+
+    /* FOOTER */
+
+    .footer {
+        display: flex;
+        align-items: center;
+        height: 100px;
+        width: 100%;
+        background-color: #ab88ff;
+    }
+
+    .footer a { 
+        color: white;
+        cursor: pointer;
+        font-size: 14px;
+        padding-left: 30px;
+        text-decoration: none;
+    }
+</style>
+<body>
+    <header class="header">
+        <img class="header__img" src="logo-platzi.png" alt="">
+        <div class="header__menu">
+            <div class="header__menu--profile">
+                <img src="user-icon.png" alt="">
+                <p>Perfil</p>
+            </div>
+            <ul>
+                <li><a href="#">Cuenta</a></li>
+                <li><a href="inicio-sesion.htm">Cerrar Sesion</a></li>
+            </ul>
+            
+        </div>
+    </header>
+
+    <section class="main">
+        <h2 class="main__title">¿Que quieres ver hoy?</h2>
+        <input type="text" placeholder="Buscar ..." class="main__input">
+    </section>
+
+    <H2 class="categorias__titulo">Mi lista</H2>
+
+    <section class="carrusel">
+        <div class="carrusel__contenedor">
+            <div class="carrusel__item">
+                <img class="carrusel__item--img" src="https://source.unsplash.com/random?movie" />
+                <div class="carrusel__item--detalle">
+                    <div>
+                        <img src="play-icon.png" alt="play">
+                        <img src="plus-icon.png" alt="plus">
+                    </div>
+                    <p class="carrusel__item--detalle--titulo">
+                        Titulo descriptivo
+                    </p>
+                    <p class="carrusel__item--detalle--subtitulo">
+                        2019 16+ 114 min
+                    </p>
+                </div>
+            </div>
+            <div class="carrusel__item">
+                <img class="carrusel__item--img" src="https://source.unsplash.com/random?people" />
+                <div class="carrusel__item--detalle">
+                    <div>
+                        <img src="play-icon.png" alt="play">
+                        <img src="plus-icon.png" alt="plus">
+                    </div>
+                    <p class="carrusel__item--detalle--titulo">
+                        Titulo descriptivo
+                    </p>
+                    <p class="carrusel__item--detalle--subtitulo">
+                        2019 16+ 114 min
+                    </p>
+                </div>
+            </div>
+            <div class="carrusel__item">
+                <img class="carrusel__item--img" src="https://source.unsplash.com/random?nature" />
+                <div class="carrusel__item--detalle">
+                    <div>
+                        <img src="play-icon.png" alt="play">
+                        <img src="plus-icon.png" alt="plus">
+                    </div>
+                    <p class="carrusel__item--detalle--titulo">
+                        Titulo descriptivo
+                    </p>
+                    <p class="carrusel__item--detalle--subtitulo">
+                        2019 16+ 114 min
+                    </p>
+                </div>
+            </div>
+            <div class="carrusel__item">
+                <img class="carrusel__item--img" src="https://source.unsplash.com/random?architecture" />
+                <div class="carrusel__item--detalle">
+                    <div>
+                        <img src="play-icon.png" alt="play">
+                        <img src="plus-icon.png" alt="plus">
+                    </div>
+                    <p class="carrusel__item--detalle--titulo">
+                        Titulo descriptivo
+                    </p>
+                    <p class="carrusel__item--detalle--subtitulo">
+                        2019 16+ 114 min
+                    </p>
+                </div>
+            </div>
+            <div class="carrusel__item">
+                <img class="carrusel__item--img" src="https://source.unsplash.com/random?fashion" />
+                <div class="carrusel__item--detalle">
+                    <div>
+                        <img src="play-icon.png" alt="play">
+                        <img src="plus-icon.png" alt="plus">
+                    </div>
+                    <p class="carrusel__item--detalle--titulo">
+                        Titulo descriptivo
+                    </p>
+                    <p class="carrusel__item--detalle--subtitulo">
+                        2019 16+ 114 min
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <H2 class="categorias__titulo">Ultimas agregadas</H2>
+
+    <section class="carrusel">
+        <div class="carrusel__contenedor">
+            <div class="carrusel__item">
+                <img class="carrusel__item--img" src="https://source.unsplash.com/random?movie" />
+                <div class="carrusel__item--detalle">
+                    <div>
+                        <img src="play-icon.png" alt="play">
+                        <img src="plus-icon.png" alt="plus">
+                    </div>
+                    <p class="carrusel__item--detalle--titulo">
+                        Titulo descriptivo
+                    </p>
+                    <p class="carrusel__item--detalle--subtitulo">
+                        2019 16+ 114 min
+                    </p>
+                </div>
+            </div>
+            <div class="carrusel__item">
+                <img class="carrusel__item--img" src="https://source.unsplash.com/random?people" />
+                <div class="carrusel__item--detalle">
+                    <div>
+                        <img src="play-icon.png" alt="play">
+                        <img src="plus-icon.png" alt="plus">
+                    </div>
+                    <p class="carrusel__item--detalle--titulo">
+                        Titulo descriptivo
+                    </p>
+                    <p class="carrusel__item--detalle--subtitulo">
+                        2019 16+ 114 min
+                    </p>
+                </div>
+            </div>
+            <div class="carrusel__item">
+                <img class="carrusel__item--img" src="https://source.unsplash.com/random?nature" />
+                <div class="carrusel__item--detalle">
+                    <div>
+                        <img src="play-icon.png" alt="play">
+                        <img src="plus-icon.png" alt="plus">
+                    </div>
+                    <p class="carrusel__item--detalle--titulo">
+                        Titulo descriptivo
+                    </p>
+                    <p class="carrusel__item--detalle--subtitulo">
+                        2019 16+ 114 min
+                    </p>
+                </div>
+            </div>
+            <div class="carrusel__item">
+                <img class="carrusel__item--img" src="https://source.unsplash.com/random?architecture" />
+                <div class="carrusel__item--detalle">
+                    <div>
+                        <img src="play-icon.png" alt="play">
+                        <img src="plus-icon.png" alt="plus">
+                    </div>
+                    <p class="carrusel__item--detalle--titulo">
+                        Titulo descriptivo
+                    </p>
+                    <p class="carrusel__item--detalle--subtitulo">
+                        2019 16+ 114 min
+                    </p>
+                </div>
+            </div>
+            <div class="carrusel__item">
+                <img class="carrusel__item--img" src="https://source.unsplash.com/random?fashion" />
+                <div class="carrusel__item--detalle">
+                    <div>
+                        <img src="play-icon.png" alt="play">
+                        <img src="plus-icon.png" alt="plus">
+                    </div>
+                    <p class="carrusel__item--detalle--titulo">
+                        Titulo descriptivo
+                    </p>
+                    <p class="carrusel__item--detalle--subtitulo">
+                        2019 16+ 114 min
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <a href="/">Terminos de uso</a>
+        <a href="/">Declaracion de privacidad</a>
+        <a href="/">Centro de ayuda</a>
+    </footer>
+</body>
+</html>
